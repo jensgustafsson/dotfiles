@@ -33,7 +33,10 @@ def link(src, dest):
 
 
 if __name__ == '__main__':
+    dir = join(paths['dot_repo'], os.name)
+    if not exists(dir):
+        os.makedirs(dir)
     for file in dotfiles:
         src = join(paths['home'], file)
-        dest = join(paths['dot_repo'], file)
+        dest = join(dir, file)
         link(src, dest)
