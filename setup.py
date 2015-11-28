@@ -1,5 +1,5 @@
 import os
-from os.path import (join, realpath, abspath, basename, exists,
+from os.path import (join, realpath, abspath, basename, exists, islink,
                      expanduser, isdir, realpath, dirname)
 
 
@@ -22,7 +22,7 @@ def link(src, dest):
     if not exists(src):
         raise ValueError("{} does not exist".format(src))
 
-    if os.path.islink(dest):
+    if islink(dest):
         os.unlink(dest)
 
     try:
