@@ -259,14 +259,14 @@ tmxa() {
             echo "ERROR: Rerun the command with the project name as the second argument"
             return 1
         fi
-        tmux new-session -s $SESSION_NAME -d -n $WINDOW_NAME -c $PROJECT_PATH$PROJECT_NAME
+        tmux new-session -s $SESSION_NAME -d -n $WINDOW_NAME -c $PROJECT_PATH
         tmux send-keys -t $WINDOW_NAME "av && clear" C-m
     fi
 
     tmx_window_exist $WINDOW_NAME $SESSION_NAME
     if [ $? != 0 ]; then
         echo "Creating new window for $PROJECT_NAME project..."
-        tmux new-window -n $WINDOW_NAME -c $PROJECT_PATH$PROJECT_NAME
+        tmux new-window -n $WINDOW_NAME -c $PROJECT_PATH
         echo "Activating python venv if it exists in project folder"
         tmux send-keys -t $WINDOW_NAME "av && clear" C-m
     else
@@ -284,16 +284,17 @@ tmx_lime() {
     if [ -z $PROJECT_NAME ]; then
         PROJECT_NAME="tng"
     fi
-    tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH
+    tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH$PROJECT_NAME
 }
 
 tmx() {
+    if [ -z $1 ]; then
+        echo "ERROR: Rerun the command with the path to the project dir"
+        return 1
+    fi
     local SESSION_NAME="TMX"
-    local PROJECT_PATH="`pwd`"
-    local PROJECT_NAME=$1
-    echo $('basename $PROJECT_NAME')
-    #tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH
+    local PROJECT_PATH="`pwd`/$1"
+    local PROJECT_NAME=$(`echo basename $1`)
+    tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH
 }
 
-# Put in a batfile to start cmd with a decent prompt
-# start cmd @cmd runas /user:Administrator /k  "PROMPT $P$G"
