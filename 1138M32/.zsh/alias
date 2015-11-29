@@ -1,5 +1,7 @@
 alias rlz="source ~/.zshrc"
 
+alias gith='/usr/bin/git -c user.name="jensgustafsson" -c user.email="jensgustafsson89@gmail.com"'
+
 alias grep='grep --color'
 alias grep_py='grep --include="*.py" -irn'
 alias grep_js='grep --include="*.js" -irn'

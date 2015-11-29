@@ -1,3 +1,7 @@
+[user]
+    name = jeg
+    email = jens.gustafsson@lundalogik.se
+
 [credential]
     helper = cache
 
