@@ -12,6 +12,7 @@ dotfiles = [
     '.zshrc',
 ]
 
+
 zshfiles = [
     'alias',
     'env',
@@ -19,6 +20,7 @@ zshfiles = [
     'function',
     'prompt'
 ]
+
 
 paths = {
 	'home': expanduser('~'),
