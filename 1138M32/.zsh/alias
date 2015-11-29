@@ -1,0 +1,34 @@
+alias rlz="source ~/.zshrc"
+
+alias grep='grep --color'
+alias grep_py='grep --include="*.py" -irn'
+alias grep_js='grep --include="*.js" -irn'
+alias grep_row='grep -irn'
+alias gr=grep_row
+alias gp=grep_py
+alias gjs=grep_js
+
+alias gcbw="gulp clean --color && gulp build --color && gulp watch --color"
+
+alias ipy='console.exe ipython3'
+alias rednose='console.exe nosetests --rednose --force-color'
+alias pip_rm_all='pip freeze | grep -v "^-e" | xargs pip uninstall -y'
+
+alias lsdir="ls --almost-all -d */ | sed 's:/*$::'"
+alias ls='ls -hF --color=tty'
+alias ll='ls -l --color=tty'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias mynet='netstat -a -n -o'
+
+alias open='cygstart'
+alias sudo='cygstart --action=runas'
+alias cmd='cygstart --action=runas start_cmd.bat'
+
+alias killall='taskkill /F /T /IM'
+alias wkill='taskkill /F /pid'
