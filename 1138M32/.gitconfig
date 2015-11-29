@@ -1,1 +1,33 @@
-/home/jeg/.gitconfig
+[credential]
+    helper = cache
+
+[alias]
+	ls = log --oneline --decorate 
+	lsg = log --oneline --decorate --graph --all
+	co = checkout
+	st = status --short
+	br = branch
+	ci = commit
+	unstage = reset HEAD --
+	last = log -1 HEAD
+
+[core]
+  	editor = /bin/vim
+    filemode = false
+
+[mergetool "kdiff3"]
+cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
+path = "/cygdrive/c/Program/KDiff3/kdiff3.exe"
+keepBackup = false
+trustExitCode = false
+
+[difftool "kdiff3"]
+cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\"
+keepBackup = false
+trustExitCode = false
+
+[diff]
+tool = kdiff3
+
+[merge]
+tool = kdiff3

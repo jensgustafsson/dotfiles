@@ -1,5 +1,6 @@
+from shutil import copyfile
 import os
-from os.path import (join, realpath, abspath, basename, exists, islink,
+from os.path import (join, realpath, abspath, basename, exists,
                      expanduser, isdir, realpath, dirname)
 
 
@@ -18,16 +19,13 @@ paths = {
 }
 
 
-def link(src, dest):
+def copy(src, dest):
     if not exists(src):
         raise ValueError("{} does not exist".format(src))
 
-    if islink(dest):
-        os.unlink(dest)
-
     try:
-        os.symlink(src, dest)
-        print("{} -> {}: linked".format(src, dest))
+        copyfile(src, dest)
+        print("{} -> {}: copied".format(src, dest))
     except Exception as e:
         print("Error occured: {}".format(e))
 
@@ -39,4 +37,4 @@ if __name__ == '__main__':
     for file in dotfiles:
         src = join(paths['home'], file)
         dest = join(dir, file)
-        link(src, dest)
+        copy(src, dest)
