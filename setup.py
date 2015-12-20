@@ -10,6 +10,7 @@ dotfiles = [
     '.minttyrc',
     '.tmux.conf',
     '.zshrc',
+    '.gitignore_global'
 ]
 
 zshfiles = [
