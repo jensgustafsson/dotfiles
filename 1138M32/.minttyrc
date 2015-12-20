@@ -1,35 +1,49 @@
 Font=Sauce Code Powerline
 Term=xterm-256color
 Scrollbar=none
-FontHeight=12
-Locale=sv_SE
+FontHeight=10
 Columns=80
 Charset=UTF-8
-ForegroundColour=131, 148, 150
-BackgroundColour=  0,  43,  54
-CursorColour=    220,  50,  47
 
-BoldAsFont=no
-Term=xterm-256color
-CursorType=block
-CursorColour=120,81,140
-ForegroundColour=204,204,204
-BackgroundColour=18,18,18
-Black=49,49,49
-BoldBlack=74,74,74
-Red=120,81,140
-BoldRed=172,117,196
-Green=51,139,130
-BoldGreen=83,170,156
-Yellow=180,119,75
-BoldYellow=200,147,100
-Blue=53,93,128
-BoldBlue=71,122,179
-Magenta=92,84,145
-BoldMagenta=124,114,185
-Cyan=87,132,163
-BoldCyan=110,158,181
-White=169,179,183
-BoldWhite=215,216,217
-Locale=C
-Charset=UTF-8
+
+/*********************************/
+/*           FLAT UI             */
+/*********************************/
+ForegroundColour=   236, 240, 241
+BackgroundColour=   24,   24,  24
+CursorColour=       211,  84,   0
+BoldBlack=          52,   73,  94
+Black=              44,   62,  80
+BoldRed=            231,  76,  60
+Red=                192,  57,  43
+BoldGreen=          46,  204, 113
+Green=              39,  174,  96
+BoldYellow=         241, 196,  15
+Yellow=             243, 156,  18
+BoldBlue=           52,  152, 219
+Blue=               41,  128, 185
+BoldMagenta=        155,  89, 182
+Magenta=            142,  68, 173
+BoldCyan=           26,  188, 156
+Cyan=               122, 160, 133
+BoldWhite=          236, 240, 241
+White=              189, 195, 199
+
+/*
+Black=46,52,54
+Red=204,0,0
+Green=78,154,6
+Yellow=196,160,0
+Blue=52,101,164
+Magenta=117,80,123
+Cyan=6,152,154
+White=211,215,207
+BlackBold=85,87,83
+RedBold=239,41,41
+GreenBold=138,226,52
+YellowBold=252,233,79
+BlueBold=114,159,207
+MagentaBold=173,127,168
+CyanBold=52,226,226
+WhiteBold=238,238,236
+*/

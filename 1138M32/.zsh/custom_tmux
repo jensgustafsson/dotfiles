@@ -5,7 +5,7 @@ tmx_window_exist() {
     local SESSION_NAME=$2
     tmux list-windows -t $SESSION_NAME | grep "^[[:digit:]]\+: $PROJECT_NAME" &> /dev/null
     if [ $? != 0 ]; then
-        return 1   
+        return 1
     else
         return 0
     fi
@@ -31,7 +31,7 @@ tmxa() {
         echo "ERROR: Rerun the command with the project-path as the third argument"
         return 1
     fi
-    
+
     tmux has-session -t $SESSION_NAME &> /dev/null
     if [ $? != 0 ]; then
         echo "Session does not exist, creating..."
@@ -68,13 +68,14 @@ tmx_lime() {
 }
 
 tmx() {
-    if [ -z $1 ]; then
-        echo "ERROR: Rerun the command with the path to the project dir"
-        return 1
+    local CURRENT_PATH="`pwd`"
+    if [ -n $1 ]; then
+        cd $1
+        local PROJECT_PATH="`pwd`"
+        cd $CURRENT_PATH
     fi
     local SESSION_NAME="TMX"
-    local PROJECT_PATH="`pwd`/$1"
-    local PROJECT_NAME=$(`echo basename $1`)
+    local PROJECT_NAME=$(`echo basename $PROJECT_PATH`)
     tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH
 }
 

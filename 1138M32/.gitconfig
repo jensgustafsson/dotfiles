@@ -18,6 +18,8 @@
 [core]
   	editor = /bin/vim
     filemode = false
+	autocrlf = false
+	excludesfile = /home/jeg/.gitignore_global
 
 [mergetool "kdiff3"]
 cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
@@ -35,3 +37,5 @@ tool = kdiff3
 
 [merge]
 tool = kdiff3
+[push]
+	default = simple

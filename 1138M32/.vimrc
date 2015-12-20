@@ -1,13 +1,22 @@
-set rtp+=/usr/lib/python3.4/site-packages/powerline/bindings/vim/
+ set rtp+=/usr/lib/python3.4/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
 
 set mouse=a
 
-let g:syntastic_python_python_exec = '/usr/bin/python3.4'
+set history=200
 
-"" VUNDLE PLUGIN SETTINGS NEEDED AND STUFF GOES HERE UNDER...
+let g:syntastic_python_python_exec = '/usr/bin/python3.4'
+let g:syntastic_enable_signs = 1
+let g:syntastic_error_symbol = "☣"
+let g:syntastic_warning_symbol = "☠"
+let g:syntastic_style_error_symbol = "💩"
+let g:syntastic_style_warning_symbol = "✗"
+let g:syntastic_always_populate_loc_list = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Vundle plugin
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -23,26 +32,70 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bitfyre/vim-indent-html'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'jensgustafsson/jedi-vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'SirVer/ultisnips'
+Plugin 'Raimondi/delimitMate'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'rking/ag.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <leader>a :Ag<Space>
+let g:ag_working_path_mode="r"
+
+
+set ignorecase          " ignore case when searching
+set smartcase           " no ignorecase if Uppercase char present
+
+" swap files (.swp) in a common location
+" // means use the file's full path
+" set dir=~/.vim/_swap//
+
+" backup files (~) in a common location if possible
+" set backup
+" set backupdir=~/.vim/_backup//
+
+" turn on undo files, put them in a common location
+" set undofile
+" set undodir=~/.vim/_undo/
 "
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+set nobackup            " do not keep a backup file
+set nowritebackup
+set noswapfile"
 
+if has("win32unix")
+    " Cygwin specific settings
+    " Use block cursor in normal mode
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+endif
 
-"" --------------------------------------
-"" ......................................
+imap jk <Esc>
+
+" Docstring popup in jedivim disabled
+autocmd FileType python setlocal completeopt-=preview
+
+command Dos2Unix execute ":update | e ++ff=dos | setlocal ff=unix | w"
+
+" Doc does not automatically pop up
+let g:jedi#popup_on_dot = 0
+
+set fileformats=unix
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<, 
+set list
+nmap <leader>l :set list!<CR>
+
 syntax on
 set t_Co=256
-colorscheme gruvbox "pride
+colorscheme badwolf " antares
 
-"" MY OWN VIMRC CONFIGURATION STARTS HERE 
+"" MY OWN VIMRC CONFIGURATION STARTS HERE
 "" --------------------------------------
 "" ......................................
 " Make backspace work in cygwin. Cant erase if this line is not set...
@@ -51,6 +104,7 @@ set backspace=indent,eol,start
 "nnoremap <CR> :nohlsearch<CR><CR>
 
 map <F12> :set nohls<CR>:let @/ = ""<CR>:set hls<CR>
+set hls
 
 set cursorline
 
@@ -84,7 +138,7 @@ set scrolloff=4	" Minimum lines between cursor and window edge
 set shiftwidth=4	" Indent by 4 columns
 set showcmd	" Show partially typed commands
 set showmatch	" Show parentheses matching
-set smartindent	" Indent settings 
+set smartindent	" Indent settings
 set textwidth=100	" Maximum line width
 set whichwrap=<,>,[,],h,l " Allows for left/right keys to wrap across lines
 
@@ -119,7 +173,7 @@ set splitright
 " =========================================================================
 " NOTES ABOUT SPLITS
 " new split :sp (horizontal) or :vsp (vertical)
-" OR by using ctrl-w n OR  ctrl-w v" close a split with :q 
+" OR by using ctrl-w n OR  ctrl-w v" close a split with :q
 
 " "Max out the height of the current split
 "ctrl + w _
@@ -137,4 +191,13 @@ autocmd Filetype python setlocal colorcolumn=80
 "autocmd BufRead,BufNewFile *.py set colorcolumn=80
 "autocmd FileType python set I
 
+
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+endif
 

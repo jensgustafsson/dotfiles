@@ -32,5 +32,13 @@ alias open='cygstart'
 alias sudo='cygstart --action=runas'
 alias cmd='cygstart --action=runas start_cmd.bat'
 
+alias rm_vim_swp='find ./ -type f -name "\.*sw[klmnop]" -delete'
+alias freeze_it='pip freeze | sed 's/^M$//' >'
+alias mkvenv='deactivate; rm -r venv; wpython3 -m virtualenv venv; av'
+alias lf='console.exe limefu'
+
 alias killall='taskkill /F /T /IM'
 alias wkill='taskkill /F /pid'
+
+# export VIRTUALENVWRAPPER_PYTHON="/cygdrive/c/Python34/python.exe"
+# export VIRTUALENVWRAPPER_VIRTUALENV="/cygdrive/c/Python34/Scripts/virtualenv.exe"
