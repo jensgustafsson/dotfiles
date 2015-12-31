@@ -1,7 +1,6 @@
-from shutil import copyfile
+from shutil import copyfile, copytree, rmtree
 import os
-from os.path import (join, realpath, abspath, basename, exists,
-                     expanduser, isdir, realpath, dirname)
+from os.path import join, exists, expanduser, realpath, dirname
 
 
 dotfiles = [
@@ -22,10 +21,22 @@ zshfiles = [
 ]
 
 paths = {
-	'home': expanduser('~'),
-	'dot_repo': realpath(dirname(__file__))
+    'home': expanduser('~'),
+    'dot_repo': realpath(dirname(__file__))
 }
 
+
+def copy_dir(src, dest):
+    if not exists(src):
+        raise ValueError("{} does not exist".format(src))
+    if exists(dest):
+        rmtree(dest)
+
+    try:
+        copytree(src, dest)
+        print("{} -> {}: copied".format(src, dest))
+    except Exception as e:
+        print("Error occured: {}".format(e))
 
 def copy(src, dest):
     if not exists(src):
@@ -41,6 +52,7 @@ def copy(src, dest):
 if __name__ == '__main__':
     dir = join(paths['dot_repo'], os.environ.get('COMPUTERNAME'))
     zshdir = join(dir, '.zsh')
+    vimdir = join(dir, '.vim')
     if not exists(dir):
         os.makedirs(dir)
     if not exists(zshdir):
@@ -53,3 +65,4 @@ if __name__ == '__main__':
         src = join(paths['home'], '.zsh', file)
         dest = join(zshdir, file)
         copy(src, dest)
+        copy_dir(join(paths['home'], '.vim', 'colors'), join(vimdir, 'colors'))
