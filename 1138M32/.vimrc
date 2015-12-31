@@ -1,5 +1,6 @@
  set rtp+=/usr/lib/python3.4/site-packages/powerline/bindings/vim/
 
+
 " Always show statusline
 set laststatus=2
 
@@ -32,7 +33,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bitfyre/vim-indent-html'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jensgustafsson/jedi-vim'
+" Plugin 'jensgustafsson/jedi-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'Raimondi/delimitMate'
@@ -79,12 +80,12 @@ endif
 imap jk <Esc>
 
 " Docstring popup in jedivim disabled
-autocmd FileType python setlocal completeopt-=preview
+" autocmd FileType python setlocal completeopt-=preview
 
 command Dos2Unix execute ":update | e ++ff=dos | setlocal ff=unix | w"
 
 " Doc does not automatically pop up
-let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_on_dot = 0
 
 set fileformats=unix
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<, 
@@ -156,7 +157,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 " ctrlp options
-set wildignore+=,*/venv/*,*/Python34/*,*/node_modules/*,*/__pycache__/*,*/.git/*,*.o/*.pyc,*.so,*.swp,*.zip
+set wildignore+=*/venv/*,*/Python34/*,*/node_modules/*,*/__pycache__/*,*/.git/*,*.o/*.pyc,*.so,*.swp,*.zip
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = ''
@@ -188,8 +189,6 @@ set splitright
 "
 setlocal colorcolumn=
 autocmd Filetype python setlocal colorcolumn=80
-"autocmd BufRead,BufNewFile *.py set colorcolumn=80
-"autocmd FileType python set I
 
 
 if has("autocmd")
@@ -197,7 +196,10 @@ if has("autocmd")
   filetype on
 
   " Syntax of these languages is fussy over tabs Vs spaces
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType yaml setlocal ts=4 sts=4 sw=4 expandtab
 endif
 
+
+" autocmd BufEnter * lcd %:p:h 
+set tags=./tags,tags;$HOME
