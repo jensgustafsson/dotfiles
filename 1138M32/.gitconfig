@@ -1,6 +1,6 @@
 [user]
-    name = jeg
-    email = jens.gustafsson@lundalogik.se
+	name = Jens Gustafsson
+	email = jens.gustafsson@lundalogik.se
 
 [credential]
     helper = cache
@@ -20,6 +20,8 @@
     filemode = false
     autocrlf = false
     excludesfile = /home/jeg/.gitignore_global
+	preloadindex = true
+	fscache = true
 
 [mergetool "kdiff3"]
     cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
@@ -45,3 +47,5 @@
 [color]
     ui = always
     diff = always
+[gc]
+	auto = 256
