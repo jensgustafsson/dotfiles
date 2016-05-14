@@ -36,6 +36,7 @@ set ttyfast
 set background=dark
 set splitbelow
 set splitright
+set tags=tags;
 
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -90,9 +91,12 @@ imap jk <Esc>
 nnoremap <leader>a :Ag<Space>
 nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 nnoremap <leader>js :%!python -m json.tool<cr>
+nnoremap <silent> <F12> :echo "Rebuilding tags..."<cr>:!ctags .<cr>:echo "Rebuilt tags"<cr>
 nmap <leader>l :set list!<CR>
 nmap <leader>vimrc :e $MYVIMRC<CR>
 nnoremap <leader>vimrl :source $MYVIMRC<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <leader>p :CtrlP<cr>
+nnoremap <leader>t :CtrlPTag<cr>
 
 command! Dos2Unix execute ":update | e ++ff=dos | setlocal ff=unix | w"

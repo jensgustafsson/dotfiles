@@ -1,0 +1,14 @@
+--languages=python
+--links=no
+--python-kinds=cfm
+--recurse
+--exclude=build
+--exclude=dist
+--exclude=Python34
+--exclude=venv
+--exclude=ubuntu_venv
+--exclude=venv.bak
+--exclude=webclient
+--exclude=node_modules
+--exclude=package
+--exclude=.eggs
