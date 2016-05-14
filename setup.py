@@ -9,8 +9,7 @@ dotfiles = [
     '.minttyrc',
     '.tmux.conf',
     '.zshrc',
-    '.gitignore_global'
-]
+    '.gitignore_global']
 
 zshfiles = [
     'alias',
@@ -37,6 +36,7 @@ def copy_dir(src, dest):
         print("{} -> {}: copied".format(src, dest))
     except Exception as e:
         print("Error occured: {}".format(e))
+
 
 def copy(src, dest):
     if not exists(src):
@@ -65,4 +65,8 @@ if __name__ == '__main__':
         src = join(paths['home'], '.zsh', file)
         dest = join(zshdir, file)
         copy(src, dest)
-        copy_dir(join(paths['home'], '.vim', 'colors'), join(vimdir, 'colors'))
+        copy_dir(join(paths['home'], '.vim', 'ftplugin'),
+                 join(vimdir, 'ftplugin'))
+
+        copy_dir(join(paths['home'], '.vim', 'UltiSnips'),
+                 join(vimdir, 'UltiSnips'))
