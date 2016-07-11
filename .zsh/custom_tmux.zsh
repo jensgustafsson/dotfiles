@@ -1,5 +1,3 @@
-# vim:syntax=zsh
-
 tmx_window_exist() {
     local PROJECT_NAME=$1
     local SESSION_NAME=$2
@@ -78,4 +76,3 @@ tmx() {
     local PROJECT_NAME=$(`echo basename $PROJECT_PATH`)
     tmxa $SESSION_NAME $PROJECT_NAME $PROJECT_PATH
 }
-

@@ -59,18 +59,22 @@ Plugin 'SirVer/ultisnips'
 Plugin 'hdima/python-syntax'
 Plugin 'Konfekt/FastFold'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
 
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme gruvbox
 
 syntax on
 filetype on
 
 let g:python_folding = 1
 let g:Python3Syntax = 1
-let g:syntastic_python_python_exec = '/usr/bin/python3.4'
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = "☣"
 let g:syntastic_warning_symbol = "☠"
@@ -81,7 +85,6 @@ let g:ag_working_path_mode="r"
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = ''
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
 
@@ -100,3 +103,28 @@ nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 
 command! Dos2Unix execute ":update | e ++ff=dos | setlocal ff=unix | w"
+
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+
+" Cygwin specific settings
+" Use block cursor in normal mode
+if exists('$TMUX')
+    let &t_ti = "\<Esc>Ptmux;\<Esc>\e[1 q\<Esc>\\"
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[1 q\<Esc>\\"
+    let &t_te = "\<Esc>Ptmux;\<Esc>\e[0 q\<Esc>\\"
+else
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+endif

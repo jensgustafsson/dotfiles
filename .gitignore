@@ -1,1 +1,4 @@
 venv
+.vim/bundle
+.vim/ftplugin
+.vim/.netrwhist
