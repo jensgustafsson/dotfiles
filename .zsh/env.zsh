@@ -21,6 +21,6 @@ if [[ $(uname) =~ darwin ]]; then
   export IS_MAC=0
 fi
 
-if [[ $(uname) =~ cygwin_nt ]]; then
+if [[ $(uname) =~ CYGWIN_NT ]]; then
   export IS_CYGWIN=0
 fi
