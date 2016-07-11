@@ -128,3 +128,7 @@ else
     let &t_EI.="\e[1 q"
     let &t_te.="\e[0 q"
 endif
+
+" Clear screen at exit
+set t_ti=""
+

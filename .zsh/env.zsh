@@ -1,5 +1,4 @@
 export TERM=xterm-256color
-export CLICOLOR=1
 
 export LESS='--quit-if-one-screen --no-init --ignore-case --chop-long-lines --raw-control-chars'
 export PAGER='less'
