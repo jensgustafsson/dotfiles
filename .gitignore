@@ -2,3 +2,7 @@ venv
 .vim/bundle
 .vim/ftplugin
 .vim/.netrwhist
+todo.txt/*
+!todo.txt/todo.sh
+!todo.txt/todo.cfg
+
