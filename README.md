@@ -49,6 +49,13 @@ choco upgrade ag, kdiff3, procmon, procexp, sysinternals, fiddler4
 ```
 
 
+## Visual Code fixes: Symlink cygdrive in windows
+```
+mklink /j "C:\cygdrive" "C:\"
+mklink /j "C:\cygdrive\c" "C:\"
+```
+
+
 ## Rm bash completion
 
 ```
@@ -60,7 +67,7 @@ mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
 
 ### Install font `hack`
 
-[Link to github repo](https://github.com/chrissimpkins/Hac://github.com/chrissimpkins/Hack)
+[Link to github repo](https://github.com/chrissimpkins/Hack)
 
 
 ### Mactype
