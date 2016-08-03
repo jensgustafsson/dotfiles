@@ -13,6 +13,7 @@ clang
 coreutils
 crypt
 csih
+ctags
 cvs
 cvsps
 cygrunsrv
@@ -85,6 +86,7 @@ libcairo-devel
 libcairo2
 libclang-devel
 libclang3.7
+libclang3.8
 libcloog-isl4
 libcom_err2
 libcrypt0
@@ -174,6 +176,7 @@ liblcms1
 liblcms2_2
 libllvm-devel
 libllvm3.7
+libllvm3.8
 liblzma5
 liblzo2_2
 libmarisa0
@@ -208,6 +211,7 @@ libpixman1_0
 libpng-devel
 libpng16
 libpng16-devel
+libpopt-common
 libpopt0
 libportaudio2
 libportmidi0
@@ -388,6 +392,7 @@ perl-Digest-HMAC
 perl-Error
 perl-IO-Socket-SSL
 perl-MailTools
+perl-Mozilla-CA
 perl-Net-SMTP-SSL
 perl-Net-SSLeay
 perl-Scalar-List-Utils
