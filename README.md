@@ -48,6 +48,9 @@ choco install ag, kdiff3, procmon, procexp, sysinternals, fiddler4
 choco upgrade ag, kdiff3, procmon, procexp, sysinternals, fiddler4
 ```
 
+## Install winpty
+[Link to github repo](https://github.com/rprichard/winpty)
+
 
 ## Visual Code fixes: Symlink cygdrive in windows
 ```
