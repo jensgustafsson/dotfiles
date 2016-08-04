@@ -5,13 +5,13 @@
 ### Freeze installed packages
 
 ```
-cygcheck -c -d | sed -e "1,2d" -e 's/ .*$//' > cygwin_package
+cygcheck -c -d | sed -e "1,2d" -e 's/ .*$//' > cygwin_packages
 ```
 
 ### Install pacakges from freezed file
 
 ```
-./setup-x86_64 -P `awk 'NR==1{printf $1}{printf ",%s", $1}' cygwin_package`
+./setup-x86_64 -P `awk 'NR==1{printf $1}{printf ",%s", $1}' cygwin_packages`
 ```
 
 ## Make zsh default shell

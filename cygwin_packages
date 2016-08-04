@@ -2,6 +2,10 @@ _autorebase
 adwaita-icon-theme
 alternatives
 at-spi2-core
+autoconf
+autoconf2.1
+autoconf2.5
+automake1.9
 autossh
 base-cygwin
 base-files
@@ -142,6 +146,7 @@ libgstinterfaces1.0_0
 libgstreamer0.10_0
 libgstreamer1.0_0
 libgtk2.0_0
+libguile17
 libharfbuzz0
 libhdf5_10
 libhdf5hl_10
@@ -177,6 +182,7 @@ liblcms2_2
 libllvm-devel
 libllvm3.7
 libllvm3.8
+libltdl7
 liblzma5
 liblzo2_2
 libmarisa0
@@ -347,8 +353,11 @@ libzmq5
 lighttpd
 llvm
 login
+lua
 lua5.1
 lynx
+m4
+make
 man-db
 mingw64-i686-binutils
 mingw64-i686-gcc-core
@@ -362,10 +371,12 @@ mingw64-i686-winpthreads
 mingw64-i686-zlib
 mingw64-x86_64-binutils
 mingw64-x86_64-gcc-core
+mingw64-x86_64-gcc-g++
 mingw64-x86_64-headers
 mingw64-x86_64-libgit2
 mingw64-x86_64-libssh2
 mingw64-x86_64-pkg-config
+mingw64-x86_64-qt4-qmake
 mingw64-x86_64-runtime
 mingw64-x86_64-windows-default-manifest
 mingw64-x86_64-winpthreads
@@ -395,11 +406,13 @@ perl-MailTools
 perl-Mozilla-CA
 perl-Net-SMTP-SSL
 perl-Net-SSLeay
+perl-Pod-Simple
 perl-Scalar-List-Utils
 perl-TermReadKey
 perl-Test-Differences
 perl-Text-Diff
 perl-TimeDate
+perl-Unicode-Normalize
 perl-YAML
 perl_autorebase
 perl_base
@@ -491,6 +504,7 @@ tcl
 tcl-tix
 tcl-tk
 terminfo
+texinfo
 tmux
 tzdata
 unzip
