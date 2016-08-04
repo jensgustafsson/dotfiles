@@ -1,6 +1,4 @@
 export TERM=xterm-256color
-
-export LESS='--quit-if-one-screen --no-init --ignore-case --chop-long-lines --raw-control-chars'
 export PAGER='less'
 
 export LANG=en_US.UTF-8

@@ -1,7 +1,7 @@
 tmx_window_exist() {
     local PROJECT_NAME=$1
     local SESSION_NAME=$2
-    tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
+    tmux list-windows -t $SESSION_NAME | grep "^[[:digit:]]\+: $PROJECT_NAME.\? " &> /dev/null
     if [ $? != 0 ]; then
         return 1
     else
