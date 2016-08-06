@@ -78,6 +78,8 @@ mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
 Fonts on windows looks like crap without this. Install!
 (Install file on dropbox)
 
+Use `mactype.ini` as config file in Mactype.
+
 
 ## Thanks
 
