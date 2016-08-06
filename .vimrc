@@ -117,11 +117,17 @@ let g:airline_symbols.linenr = ''
 
 " Cygwin specific settings
 " Use block cursor in normal mode
-set term=xterm-256color
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
     let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
 else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
+endif
+
+if &term =~ '256color'
+  " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen 
+  " https://sunaku.github.io/vim-256color-bce.html
+  " This setting must be applied after `set term=xterm-256color`. (If it is set)
+  set t_ut=
 endif
