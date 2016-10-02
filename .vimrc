@@ -103,6 +103,8 @@ nmap <leader>l :set list!<CR>
 nmap <leader>vimrc :e $MYVIMRC<CR>
 nnoremap <leader>vimrl :source $MYVIMRC<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <leader>bd :set background=dark<cr>
+nnoremap <leader>bl :set background=light<cr>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 
