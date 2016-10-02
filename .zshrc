@@ -44,6 +44,6 @@ if [[ -r ~/.zsh/custom_tmux.zsh ]]; then
     . ~/.zsh/custom_tmux.zsh
 fi
 
-if [[ -r ~/.zsh/vi-mode.zsh ]]; then
-    . ~/.zsh/vi-mode.zsh
+if [[ -r ~/.zsh/emacs-mode.zsh ]]; then
+    . ~/.zsh/emacs-mode.zsh
 fi

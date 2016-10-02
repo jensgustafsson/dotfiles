@@ -13,4 +13,7 @@ if [[ "$(uname)" =~ CYGWIN_NT ]]; then
     alias wkill='taskkill /F /pid'
     alias code='cygstart code'
     alias wpython3='winpty.exe /cygdrive/c/Python34/python'
+    alias wpy='winpty.exe /cygdrive/c/Python34/python'
+    alias wmanage='winpty.exe python manage.py'
+    alias wman='winpty.exe python manage.py'
 fi
