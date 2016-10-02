@@ -86,7 +86,6 @@ let g:syntastic_warning_symbol = "☠"
 let g:syntastic_style_error_symbol = "💩"
 let g:syntastic_style_warning_symbol = "✗"
 let g:syntastic_always_populate_loc_list = 1
-let g:ag_working_path_mode="r"
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = ''
