@@ -95,7 +95,7 @@ let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R',
 call camelcasemotion#CreateMotionMappings('<leader>')
 
 imap jk <Esc>
-nnoremap <leader>a :Ag<Space>
+nnoremap <leader>a :Ag ""<left>
 nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 nnoremap <leader>js :%!python -m json.tool<cr>
 nnoremap <silent> <F12> :echo "Rebuilding tags..."<cr>:!ctags .<cr>:echo "Rebuilt tags"<cr>
