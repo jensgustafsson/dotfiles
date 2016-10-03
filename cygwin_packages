@@ -18,6 +18,7 @@ coreutils
 crypt
 csih
 ctags
+curl
 cvs
 cvsps
 cygrunsrv
@@ -157,6 +158,7 @@ libICE6
 libiconv
 libiconv2
 libicu56
+libicu57
 libidn11
 libilmbase12
 libIlmImf22
@@ -186,7 +188,9 @@ libltdl7
 liblzma5
 liblzo2_2
 libmarisa0
+libmetalink3
 libmng1
+libmng2
 libmpc3
 libmpfr4
 libmysqlclient18
