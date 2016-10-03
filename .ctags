@@ -1,9 +1,10 @@
---languages=python,javascript
+--languages=python
 --links=no
 --python-kinds=cfm
 --recurse
 --exclude=build
 --exclude=dist
+--exclude=docs
 --exclude=Python34
 --exclude=ubuntu_venv
 --exclude=venv.bak
