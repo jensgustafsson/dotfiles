@@ -2,7 +2,8 @@ set -o emacs
 
 manemacsmode() {
     echo 'Moving the cursor:
-  Ctrl + w   Delete text before cursor
+  Ctrl + w   Delete word before cursor
+  Alt  + d   Delete word after cursor
   Ctrl + a   Go to the beginning of the line (Home)
   Ctrl + e   Go to the End of the line (End)
   Ctrl + p   Previous command (Up arrow)
