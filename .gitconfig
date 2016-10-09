@@ -24,13 +24,14 @@
     fscache = true
 
 [mergetool "kdiff3"]
-    cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
-    path = "/cygdrive/c/Program/KDiff3/kdiff3.exe"
+    cmd = \"/cygdrive/c/Program Files/KDiff3/kdiff3\" \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
+    path = \"/cygdrive/c/Program Files/KDiff3/kdiff3.exe\"
     keepBackup = false
     trustExitCode = false
 
 [difftool "kdiff3"]
-    cmd = /cygdrive/c/Program/KDiff3/kdiff3 \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\"
+    cmd = \"/cygdrive/c/Program Files/KDiff3/kdiff3\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\"
+
     keepBackup = false
     trustExitCode = false
 
