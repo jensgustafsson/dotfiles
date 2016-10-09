@@ -47,3 +47,7 @@ fi
 if [[ -r ~/.zsh/emacs-mode.zsh ]]; then
     . ~/.zsh/emacs-mode.zsh
 fi
+
+if [[ -r ~/.zsh/help.zsh ]]; then
+    . ~/.zsh/help.zsh
+fi
