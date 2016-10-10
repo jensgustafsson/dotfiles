@@ -30,6 +30,7 @@ dash
 dejavu-fonts
 desktop-file-utils
 diffutils
+dos2unix
 dri-drivers
 editrights
 file
