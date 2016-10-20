@@ -65,6 +65,18 @@ mklink /j "C:\cygdrive\c" "C:\"
 mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
 ```
 
+## Mintty-colors plugin
+
+```
+pip install mintty-colors
+```
+
+```
+# Usage:
+mtc list
+mtc set
+```
+
 
 ## Fonts
 
