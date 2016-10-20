@@ -1,3 +1,7 @@
+tma() {
+    tmux new-session -t $1
+}
+
 tmx_window_exist() {
     local PROJECT_NAME=$1
     local SESSION_NAME=$2
