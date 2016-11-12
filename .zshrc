@@ -40,8 +40,8 @@ if [[ -r ~/.zsh/env.zsh ]]; then
     . ~/.zsh/env.zsh
 fi
 
-if [[ -r ~/.zsh/custom_tmux.zsh ]]; then
-    . ~/.zsh/custom_tmux.zsh
+if [[ -r ~/.zsh/tmux.zsh ]]; then
+    . ~/.zsh/tmux.zsh
 fi
 
 if [[ -r ~/.zsh/emacs-mode.zsh ]]; then
