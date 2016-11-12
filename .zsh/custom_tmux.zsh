@@ -1,4 +1,7 @@
-# Check if a window with a specifix name exists or not in the active session.
+#
+## Check if window `PROJECT_NAME` exists.
+#
+
 tmux_window_exist() {
     local PROJECT_NAME=$1
     tmux list-windows | grep "^[[:digit:]]\+: $PROJECT_NAME.\? " &> /dev/null
@@ -9,15 +12,20 @@ tmux_window_exist() {
     fi
 }
  
-# Create a new session or attach to an exisiting session
-# Path to where session shall be created is optional. If provided,
-# use the basename as session name.
+
+# 
+## Create or/and attach to an existing session
+##
+## Create a new session and set working dir to the provided path
+## or attach to an exisiting session
+#
+
 tms() {
     if [ -n "$1" ]; then
         local CURRENT_PATH="`pwd`"
         cd $1 &> /dev/null
         if [ $? != 0 ]; then
-            echo 'The provided path does not exist!'
+            echo 'specified working directory does not exist'
             return 1
         fi
         local PROJECT_PATH="`pwd`"
@@ -44,9 +52,14 @@ tms() {
     fi
 }
 
-# Open a new window inside a session.
-# If a path is provided, open the window and change dir to the provided
-# path. Use the basename as window-name.
+
+#
+## Opens a new window inside the current tmux session.
+##
+## Sets working dir to the provided path
+## Uses the name of the directory the path is pointing at as window name.
+#
+
 tmx() {
     local CURRENT_PATH="`pwd`"
     if [ -n $1 ]; then
