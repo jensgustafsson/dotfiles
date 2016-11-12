@@ -101,3 +101,13 @@ function cdb() {
         return 1
     fi
 }
+
+function cd() {
+    builtin cd $1
+    if [ $? != 0 ]; then
+        return 1
+    fi
+
+    activate_python &> /dev/null
+    return 0
+}
