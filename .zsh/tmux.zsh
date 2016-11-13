@@ -77,3 +77,35 @@ tmx() {
     fi
     return 0
 }
+
+
+#
+## Create new session or attach to existing session with name SESSION_NAME.
+#
+
+tmsa() {
+    local SESSION_NAME=$1
+
+    if [ -z "$SESSION_NAME" ]; then
+        echo 'Usage: tmsa <SESSION_NAME>'
+        return 1
+    fi
+
+    if [ -n "$TMUX" ]; then
+        if [ -n "$SESSION_NAME" ]; then
+            tmux switch-client -t $SESSION_NAME &> /dev/null
+            if [ $? != 0 ]; then
+                tmux new -s $SESSION_NAME -d && tmux switch-client -t $SESSION_NAME
+            fi
+        else
+            return 1
+        fi
+
+    else
+        if [ -n "$SESSION_NAME" ]; then
+            tmux attach -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
+        else
+            tmux attach
+        fi
+    fi
+}
