@@ -29,7 +29,8 @@ tms() {
             return 1
         fi
         local PROJECT_PATH="`pwd`"
-        local SESSION_NAME=$(`echo basename $PROJECT_PATH`)
+        local PROJECT_PATH="$PROJECT_PATH:A"
+        local SESSION_NAME="$PROJECT_PATH:t"
         cd $CURRENT_PATH
     fi
 
@@ -67,7 +68,7 @@ tmx() {
         local PROJECT_PATH="`pwd`"
         cd $CURRENT_PATH
     fi
-    local PROJECT_NAME=$(`echo basename $PROJECT_PATH`)
+    local PROJECT_NAME="$PROJECT_PATH:t"
 
     tmux_window_exist $PROJECT_NAME &> /dev/null
     if [ $? != 0 ]; then
