@@ -6,7 +6,9 @@ alias grep_row='grep -irn'
 alias gr=grep_row
 alias gp=grep_py
 alias gjs=grep_js
-alias ll='ls -l'
+alias lsdir="ls --almost-all -d */ | sed 's:/*$::'"
+alias ls='ls -hF --color=tty'
+alias ll='ls -l --color=tty'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias rm_vim_swp='find ./ -type f -name "\.*sw[klmnop]" -delete'

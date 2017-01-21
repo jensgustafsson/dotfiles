@@ -63,7 +63,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
-Plugin 'lifepillar/vim-solarized8'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -132,7 +131,9 @@ else
     let &t_EI = "\e[2 q"
 endif
 
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-let base16colorspace=256
+if &term =~ '256color'
+  " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen 
+  " https://sunaku.github.io/vim-256color-bce.html
+  " This setting must be applied after `set term=xterm-256color`. (If it is set)
+  set t_ut=
+endif
