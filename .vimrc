@@ -63,6 +63,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'chriskempson/base16-vim'
 
 if executable('ag')
