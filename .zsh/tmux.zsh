@@ -34,11 +34,13 @@ tms() {
         cd $CURRENT_PATH
     fi
 
+    local DEFAULT_WINDOW_NAME="main"
+
     if [ -n "$TMUX" ]; then
         if [ -n "$SESSION_NAME" ]; then
             tmux switch-client -t $SESSION_NAME &> /dev/null
             if [ $? != 0 ]; then
-                tmux new -s $SESSION_NAME -d -c $PROJECT_PATH && tmux switch-client -t $SESSION_NAME
+                tmux new -s $SESSION_NAME -d -c $PROJECT_PATH -n $DEFAULT_WINDOW_NAME && tmux switch-client -t $SESSION_NAME
             fi
         else
             return 1
@@ -46,7 +48,7 @@ tms() {
 
     else
         if [ -n "$SESSION_NAME" ]; then
-            tmux attach -t $SESSION_NAME || tmux new-session -s $SESSION_NAME -c $PROJECT_PATH
+            tmux attach -t $SESSION_NAME || tmux new-session -s $SESSION_NAME -c $PROJECT_PATH -n $DEFAULT_WINDOW_NAME
         else
             tmux attach
         fi
@@ -86,6 +88,7 @@ tmx() {
 
 tmsa() {
     local SESSION_NAME=$1
+    local DEFAULT_WINDOW_NAME="main"
 
     if [ -z "$SESSION_NAME" ]; then
         echo 'Usage: tmsa <SESSION_NAME>'
@@ -96,7 +99,7 @@ tmsa() {
         if [ -n "$SESSION_NAME" ]; then
             tmux switch-client -t $SESSION_NAME &> /dev/null
             if [ $? != 0 ]; then
-                tmux new -s $SESSION_NAME -d && tmux switch-client -t $SESSION_NAME
+                tmux new -s $SESSION_NAME -d -n $DEFAULT_WINDOW_NAME && tmux switch-client -t $SESSION_NAME
             fi
         else
             return 1
@@ -104,7 +107,7 @@ tmsa() {
 
     else
         if [ -n "$SESSION_NAME" ]; then
-            tmux attach -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
+            tmux attach -t $SESSION_NAME || tmux new-session -s $SESSION_NAME -n $DEFAULT_WINDOW_NAME
         else
             tmux attach
         fi
