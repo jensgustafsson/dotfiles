@@ -16,4 +16,5 @@ if [[ "$(uname)" =~ CYGWIN_NT ]]; then
     alias wpy='winpty.exe /cygdrive/c/Python34/python'
     alias wmanage='winpty.exe python manage.py'
     alias wman='winpty.exe python manage.py'
+    alias lisa='winpty.exe /cygdrive/c/src/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe'
 fi
