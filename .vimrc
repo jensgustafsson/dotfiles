@@ -58,13 +58,14 @@ Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'hdima/python-syntax'
 Plugin 'Konfekt/FastFold'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
-Plugin 'lifepillar/vim-solarized8'
 Plugin 'chriskempson/base16-vim'
+
+" Color themes
+Plugin 'morhetz/gruvbox'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'lifepillar/vim-solarized8'
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -74,7 +75,7 @@ call vundle#end()
 filetype plugin indent on
 
 " colorscheme PaperColor
-colorscheme gruvbox
+" colorscheme gruvbox
 
 syntax on
 filetype on
