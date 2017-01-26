@@ -82,17 +82,28 @@ filetype on
 
 let g:python_folding = 1
 let g:Python3Syntax = 1
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = "☣"
-let g:syntastic_warning_symbol = "☠"
-let g:syntastic_style_error_symbol = "💩"
-let g:syntastic_style_warning_symbol = "✗"
-let g:syntastic_always_populate_loc_list = 1
+
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = ''
+
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
+
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_style_error_symbol = '✠✠'
+let g:syntastic_warning_symbol = '∆∆'
+let g:syntastic_style_warning_symbol = '≈≈'
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 
 
 call camelcasemotion#CreateMotionMappings('<leader>')
