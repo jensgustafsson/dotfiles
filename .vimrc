@@ -123,6 +123,9 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_theme='PaperColor'
 
+augroup filetype_python
+    autocmd FileType python setlocal nosmartindent
+augroup END
 
 " Cygwin specific settings
 " Use block cursor in normal mode
