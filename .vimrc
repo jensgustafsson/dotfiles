@@ -74,8 +74,8 @@ endif
 call vundle#end()
 filetype plugin indent on
 
-" colorscheme PaperColor
-" colorscheme gruvbox
+highlight ColorColumn ctermbg=gray
+set colorcolumn=80
 
 syntax on
 filetype on
@@ -106,8 +106,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>vimrc :e $MYVIMRC<CR>
 nnoremap <leader>vimrl :source $MYVIMRC<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-nnoremap <leader>bd :set background=dark<cr>
-nnoremap <leader>bl :set background=light<cr>
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 
@@ -122,6 +121,7 @@ let g:airline_symbols = {}
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_theme='PaperColor'
 
 
 " Cygwin specific settings
@@ -138,6 +138,8 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+
+" colorscheme solarized8_dark_flat
 
 if &term =~ '256color'
   " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
