@@ -12,12 +12,12 @@ if [[ -r ~/.zsh/functions.zsh ]]; then
     . ~/.zsh/functions.zsh
 fi
 
-if [[ -r ~/.zsh/nt_alias.zsh ]]; then
-    . ~/.zsh/nt_alias.zsh
-fi
-
 if [[ -r ~/.zsh/alias.zsh ]]; then
     . ~/.zsh/alias.zsh
+fi
+
+if [[ -r ~/.zsh/nt_specific.zsh ]]; then
+    . ~/.zsh/nt_specific.zsh
 fi
 
 if [[ -r ~/.zsh/todo.txt.zsh ]]; then
