@@ -58,11 +58,26 @@ Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
 Plugin 'hdima/python-syntax'
 Plugin 'Konfekt/FastFold'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'airblade/vim-gitgutter'
+
+" Color themes
+Plugin 'morhetz/gruvbox'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'lifepillar/vim-solarized8'
+Plugin 'reedes/vim-colors-pencil'
+
+
+let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
+let g:pencil_neutral_headings = 1   " 0=blue (def), 1=normal
+let g:pencil_terminal_italics = 1
+let g:pencil_spell_undercurl = 1       " 0=underline, 1=undercurl (def)
+let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
+let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
+
+
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -71,25 +86,33 @@ endif
 call vundle#end()
 filetype plugin indent on
 
-" colorscheme PaperColor
-colorscheme gruvbox
-
 syntax on
 filetype on
 
 let g:python_folding = 1
 let g:Python3Syntax = 1
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = "☣"
-let g:syntastic_warning_symbol = "☠"
-let g:syntastic_style_error_symbol = "💩"
-let g:syntastic_style_warning_symbol = "✗"
-let g:syntastic_always_populate_loc_list = 1
+
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = ''
+
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
+
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = '✗✗'
+let g:syntastic_style_error_symbol = '✠✠'
+let g:syntastic_warning_symbol = '∆∆'
+let g:syntastic_style_warning_symbol = '≈≈'
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
 
 
 call camelcasemotion#CreateMotionMappings('<leader>')
@@ -103,8 +126,7 @@ nmap <leader>l :set list!<CR>
 nmap <leader>vimrc :e $MYVIMRC<CR>
 nnoremap <leader>vimrl :source $MYVIMRC<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-nnoremap <leader>bd :set background=dark<cr>
-nnoremap <leader>bl :set background=light<cr>
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 nnoremap <leader>p :CtrlP<cr>
 nnoremap <leader>t :CtrlPTag<cr>
 
@@ -119,7 +141,13 @@ let g:airline_symbols = {}
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_theme='PaperColor'
 
+augroup filetype_python
+    autocmd!
+    autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType python setlocal nosmartindent
+augroup END
 
 " Cygwin specific settings
 " Use block cursor in normal mode
@@ -131,9 +159,20 @@ else
     let &t_EI = "\e[2 q"
 endif
 
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
+" colorscheme solarized8_dark_flat
+
 if &term =~ '256color'
-  " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen 
+  " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
   " https://sunaku.github.io/vim-256color-bce.html
   " This setting must be applied after `set term=xterm-256color`. (If it is set)
   set t_ut=
 endif
+
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
