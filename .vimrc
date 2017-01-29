@@ -61,6 +61,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'airblade/vim-gitgutter'
 
 " Color themes
 Plugin 'morhetz/gruvbox'
