@@ -12,10 +12,12 @@ export EDITOR=vim
 
 if [[ $(uname) =~ linux ]]; then
   export IS_LINUX=0
+  eval "$(rbenv init -)"
 fi
 
-if [[ $(uname) =~ darwin ]]; then
+if [[ $(uname) =~ Darwin ]]; then
   export IS_MAC=0
+  eval "$(rbenv init -)"
 fi
 
 if [[ $(uname) =~ CYGWIN_NT ]]; then
