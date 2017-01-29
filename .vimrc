@@ -86,9 +86,6 @@ endif
 call vundle#end()
 filetype plugin indent on
 
-highlight ColorColumn ctermbg=gray
-set colorcolumn=80
-
 syntax on
 filetype on
 
@@ -147,6 +144,8 @@ let g:airline_symbols.linenr = ''
 let g:airline_theme='PaperColor'
 
 augroup filetype_python
+    autocmd!
+    autocmd FileType python setlocal colorcolumn=80
     autocmd FileType python setlocal nosmartindent
 augroup END
 
