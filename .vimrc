@@ -164,7 +164,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-" colorscheme solarized8_dark_flat
+colorscheme base16-solarized-light
 
 if &term =~ '256color'
   " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
