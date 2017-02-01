@@ -100,37 +100,30 @@ set noerrorbells visualbell t_vb=
 " Enable syntax highlighting.
 syntax on
 
-"""" VUNDLE START """"""
-set rtp+=~/.vim/bundle/Vundle.vim
-filetype off
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/tmuxline.vim'
-Plugin 'rking/ag.vim'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'pangloss/vim-javascript'
-Plugin 'w0rp/ale'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'SirVer/ultisnips'
-Plugin 'hdima/python-syntax'
-Plugin 'Konfekt/FastFold'
-Plugin 'tpope/vim-fugitive'
-Plugin 'mileszs/ack.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'airblade/vim-gitgutter'
+call plug#begin()
+Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
+Plug 'rking/ag.vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'bkad/CamelCaseMotion'
+Plug 'pangloss/vim-javascript'
+Plug 'w0rp/ale'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'SirVer/ultisnips'
+Plug 'hdima/python-syntax'
+Plug 'Konfekt/FastFold'
+Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'airblade/vim-gitgutter'
 
 " Color themes
-Plugin 'morhetz/gruvbox'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'reedes/vim-colors-pencil'
-
-call vundle#end()
-"""" VUNDLE END """"""
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'reedes/vim-colors-pencil'
+call plug#end()
 
 " Configure pencil.
 let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
@@ -237,8 +230,8 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 
 " Set background...
-colorscheme base16-solarized-light
-set background=dark
+set background=light
+colorscheme base16-hopscotch
 
 if &term =~ '256color'
   " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
