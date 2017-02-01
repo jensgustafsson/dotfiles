@@ -52,7 +52,7 @@ Plugin 'rking/ag.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'SirVer/ultisnips'
@@ -69,6 +69,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'reedes/vim-colors-pencil'
 
+call vundle#end()
 
 let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
 let g:pencil_neutral_headings = 1   " 0=blue (def), 1=normal
@@ -77,17 +78,31 @@ let g:pencil_spell_undercurl = 1       " 0=underline, 1=undercurl (def)
 let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
 let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
 
+let &runtimepath.=',~/.vim/bundle/ale'
+filetype plugin on
+silent! helptags ALL
+
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 1
+let g:ale_lint_on_enter = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+
 
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-call vundle#end()
 filetype plugin indent on
 
 syntax on
-filetype on
+" filetype on
 
 let g:python_folding = 1
 let g:Python3Syntax = 1
@@ -98,22 +113,9 @@ let g:ctrlp_working_path_mode = ''
 
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = '✗✗'
-let g:syntastic_style_error_symbol = '✠✠'
-let g:syntastic_warning_symbol = '∆∆'
-let g:syntastic_style_warning_symbol = '≈≈'
-
-
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{ALEGetStatusLine()}
 set statusline+=%*
-
-
 
 call camelcasemotion#CreateMotionMappings('<leader>')
 
