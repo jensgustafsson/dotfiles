@@ -17,11 +17,13 @@ if [[ "$(uname)" =~ CYGWIN_NT ]]; then
     alias lisa='winpty.exe /cygdrive/c/src/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe'
     alias pytest="winpty.exe py.test.exe"
 
-    function ipy() {
+    function ipython_cygwin() {
         VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) EDITOR=$(cygpath -w /usr/bin/vim) winpty.exe ipython3
     }
 
     function manage.py() {
         VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) winpty.exe python manage.py $*
     }
+
+    alias ipy=ipython_cygwin
 fi
