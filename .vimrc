@@ -125,7 +125,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'reedes/vim-colors-pencil'
 call plug#end()
 
-" Configure pencil.
+" Configure colortheme pencil.
 let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
 let g:pencil_neutral_headings = 1   " 0=blue (def), 1=normal
 let g:pencil_terminal_italics = 1
@@ -137,13 +137,16 @@ let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 silent! helptags ALL
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
+let g:ale_sign_column_always = 1
+let g:ale_open_list = 0
+
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -168,10 +171,12 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+
 let g:airline_symbols = {}
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr= ''
 
 " Statusline config.
 set statusline+=%#warningmsg#
