@@ -183,17 +183,19 @@ nnoremap <leader>t :CtrlPTag<cr>
 " Configure folding. (Fastfold plugin)
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
 
-" Airline config 
+" Airline config
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-
-let g:airline_symbols = {}
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.maxlinenr= ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " Statusline config.
 set statusline+=%#warningmsg#
