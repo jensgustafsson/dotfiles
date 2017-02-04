@@ -102,7 +102,7 @@ syntax on
 
 call plug#begin()
 
-" Status/tabline for vim 
+" Status/tabline for vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
@@ -119,16 +119,16 @@ Plug 'bkad/CamelCaseMotion'
 " JS syntax highlighting and improved indentation.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
-" Asynchronous Lint Engine 
+" Asynchronous Lint Engine
 Plug 'w0rp/ale'
 
-" Fuzzy file, buffer, mru, tag, etc finder. 
+" Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Comment stuff out.
 Plug 'tpope/vim-commentary'
 
-" Solution for snippets in Vim. 
+" Solution for snippets in Vim.
 Plug 'SirVer/ultisnips'
 
 " Python syntax highlighting script for Vim
@@ -150,7 +150,7 @@ Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
-" Configure ale. 
+" Configure ale.
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 silent! helptags ALL
