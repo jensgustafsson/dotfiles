@@ -101,37 +101,54 @@ set noerrorbells visualbell t_vb=
 syntax on
 
 call plug#begin()
+
+" Status/tabline for vim 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
-Plug 'rking/ag.vim'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'bkad/CamelCaseMotion'
-Plug 'pangloss/vim-javascript'
-Plug 'w0rp/ale'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-commentary'
-Plug 'SirVer/ultisnips'
-Plug 'hdima/python-syntax'
-Plug 'Konfekt/FastFold'
-Plug 'tpope/vim-fugitive'
+
+" Vim plugin for the_silver_searcher
 Plug 'mileszs/ack.vim'
-Plug 'chriskempson/base16-vim'
+
+" Better indentation for Python
+Plug 'hynek/vim-python-pep8-indent'
+
+" Move CamelCaseWise or underscore_wise
+Plug 'bkad/CamelCaseMotion'
+
+" JS syntax highlighting and improved indentation.
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+" Asynchronous Lint Engine 
+Plug 'w0rp/ale'
+
+" Fuzzy file, buffer, mru, tag, etc finder. 
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Comment stuff out.
+Plug 'tpope/vim-commentary'
+
+" Solution for snippets in Vim. 
+Plug 'SirVer/ultisnips'
+
+" Python syntax highlighting script for Vim
+Plug 'hdima/python-syntax'
+
+" Faster folding.
+Plug 'Konfekt/FastFold'
+
+" Git plugins.
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'saltstack/salt-vim', { 'for': 'sls' }
+
 " Color themes
-Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'reedes/vim-colors-pencil'
-call plug#end()
 
-" Configure colortheme pencil.
-let g:pencil_higher_contrast_ui = 0   " 0=low (def), 1=high
-let g:pencil_neutral_headings = 1   " 0=blue (def), 1=normal
-let g:pencil_terminal_italics = 1
-let g:pencil_spell_undercurl = 1       " 0=underline, 1=undercurl (def)
-let g:pencil_gutter_color = 1      " 0=mono (def), 1=color
-let g:pencil_neutral_code_bg = 1   " 0=gray (def), 1=normal
+call plug#end()
 
 " Configure ale. 
 let &runtimepath.=',~/.vim/bundle/ale'
