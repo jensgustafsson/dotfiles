@@ -102,6 +102,8 @@ syntax on
 
 call plug#begin()
 
+Plug 'rking/ag.vim'
+
 " Status/tabline for vim
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
