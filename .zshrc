@@ -18,6 +18,12 @@ fi
 
 if [[ -r ~/.zsh/nt_specific.zsh ]]; then
     . ~/.zsh/nt_specific.zsh
+
+    if [[ "$(uname)" =~ CYGWIN_NT ]]; then
+        if [[ -r ~/.zsh/cygwin_py_activate_script.zsh ]]; then
+            . ~/.zsh/cygwin_py_activate_script.zsh
+        fi
+    fi
 fi
 
 if [[ -r ~/.zsh/todo.txt.zsh ]]; then
