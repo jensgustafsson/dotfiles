@@ -256,7 +256,11 @@ endif
 
 " Set background...
 set background=light
-colorscheme base16-hopscotch
+colorscheme base16-materia
+nnoremap <leader>bg1 :colorscheme base16-solarized-light<CR>
+nnoremap <leader>bg2 :colorscheme base16-chalk<CR>
+nnoremap <leader>bg3 :colorscheme base16-materia<CR>
+
 
 if &term =~ '256color'
   " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
