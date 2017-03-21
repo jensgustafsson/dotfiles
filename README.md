@@ -44,8 +44,8 @@ ln -s ~/src/dotfiles/.dotfile
 ### Install and upgrade some packages
 
 ```
-choco install ag, kdiff3, procmon, procexp, sysinternals, fiddler4
-choco upgrade ag, kdiff3, procmon, procexp, sysinternals, fiddler4
+choco install ag, kdiff3, procmon, procexp, sysinternals, fiddler4, fzf
+choco upgrade ag, kdiff3, procmon, procexp, sysinternals, fiddler4, fzf
 ```
 
 ## Install winpty
