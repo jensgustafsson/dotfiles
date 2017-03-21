@@ -27,6 +27,7 @@ cygwin
 cygwin-devel
 damageproto
 dash
+dconf-service
 dejavu-fonts
 desktop-file-utils
 diffutils
@@ -43,6 +44,7 @@ gamin
 gawk
 gcc-core
 gcc-g++
+gdk-pixbuf2.0-svg
 getent
 girepository-Atspi2.0
 girepository-GLib2.0
@@ -55,6 +57,7 @@ git-review
 git-svn
 gitk
 gitweb
+glib2.0-networking
 gnupg
 grep
 groff
@@ -76,6 +79,7 @@ libaprutil1
 libargp
 libaspell15
 libasyncns0
+libatk-bridge2.0_0
 libatk1.0_0
 libatomic1
 libatspi0
@@ -95,6 +99,7 @@ libclang3.7
 libclang3.8
 libcloog-isl4
 libcom_err2
+libcroco0.6_3
 libcrypt0
 libcurl4
 libdatrie1
@@ -108,6 +113,7 @@ libEGL-devel
 libEGL1
 libenchant1
 libEnginio1
+libepoxy0
 libevent2.0_5
 libexiv2_14
 libexpat-devel
@@ -148,19 +154,23 @@ libgstinterfaces1.0_0
 libgstreamer0.10_0
 libgstreamer1.0_0
 libgtk2.0_0
+libgtk3_0
 libguile17
 libharfbuzz0
 libhdf5_10
 libhdf5hl_10
 libhogweed2
 libhunspell1.3_0
+libhunspell1.4_0
 libical1
 libICE6
 libiconv
 libiconv2
 libicu56
 libicu57
+libicu58
 libidn11
+libidn2_0
 libilmbase12
 libIlmImf22
 libintl-devel
@@ -173,6 +183,7 @@ libjbig2
 libjpeg8
 libjson-c-common
 libjson-c2
+libjson-glib1.0_0
 libk5crypto3
 libkdecore5
 libkpim-common
@@ -272,6 +283,8 @@ libQtXmlPatterns4
 libquadmath0
 libqzeitgeist1
 libreadline7
+librest0.7_0
+librsvg2_2
 libsasl2_3
 libserf1_0
 libsigsegv2
@@ -279,6 +292,8 @@ libSM6
 libsmartcols1
 libsndfile1
 libsodium18
+libsoup-gnome2.4_1
+libsoup2.4_1
 libsqlite3-devel
 libsqlite3_0
 libssh-common
@@ -329,6 +344,7 @@ libxcb-shm0
 libxcb-sync1
 libxcb-util1
 libxcb-xfixes0
+libxcb-xinerama0
 libxcb-xkb1
 libxcb1
 libXcomposite1
@@ -423,6 +439,7 @@ perl_autorebase
 perl_base
 pkg-config
 popt
+publicsuffix-list-dafsa
 python
 python-chardet
 python-gi-common
@@ -511,6 +528,7 @@ tcl-tk
 terminfo
 texinfo
 tmux
+tzcode
 tzdata
 unzip
 util-linux
