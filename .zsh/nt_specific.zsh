@@ -26,4 +26,5 @@ if [[ "$(uname)" =~ CYGWIN_NT ]]; then
     }
 
     alias ipy=ipython_cygwin
+    alias kdiff3="winpty /cygdrive/c/Program Files/KDiff3/kdiff3.exe"
 fi
