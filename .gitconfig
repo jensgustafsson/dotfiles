@@ -11,9 +11,10 @@
     co = checkout
     st = status --short
     br = branch
-    ci = commit
+    ci = commit -v
     unstage = reset HEAD --
     last = log -1 HEAD
+	dd = git difftool --dir-diff
 
 [core]
     editor = vim
