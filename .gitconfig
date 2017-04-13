@@ -16,7 +16,7 @@
     last = log -1 HEAD
 
 [core]
-    editor = /bin/vim
+    editor = vim
     filemode = false
     autocrlf = false
     excludesfile = /home/jeg/.gitignore_global
