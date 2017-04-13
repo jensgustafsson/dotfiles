@@ -139,6 +139,9 @@ Plug 'hdima/python-syntax'
 " Faster folding.
 Plug 'Konfekt/FastFold'
 
+" Better folding for python
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+
 " Git plugins.
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -184,6 +187,11 @@ nnoremap <leader>t :CtrlPTag<cr>
 
 " Configure folding. (Fastfold plugin)
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
+
+" Configure simplefold
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_docstring = 0
+let g:SimpylFold_fold_import = 1
 
 " Airline config
 if !exists('g:airline_symbols')
