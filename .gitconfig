@@ -22,6 +22,7 @@
     excludesfile = /home/jeg/.gitignore_global
     preloadindex = true
     fscache = true
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [mergetool "kdiff3"]
     cmd = \"/cygdrive/c/Program Files/KDiff3/kdiff3\" \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
