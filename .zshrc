@@ -61,4 +61,3 @@ fi
 if [[ -r ~/.zsh/base16.zsh ]]; then
     . ~/.zsh/base16.zsh
 fi
-
