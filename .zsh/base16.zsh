@@ -4,4 +4,3 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 alias bg1=base16_chalk
 alias bg2=base16_solarized-light
 alias bg3=base16_materia
-bg2
