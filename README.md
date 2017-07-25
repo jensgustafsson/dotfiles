@@ -19,6 +19,9 @@ ln -s ~/src/dotfiles/.dotfile
 
 ## Fonts
 
-### Install font `hack`
+Remember to change font in terminal preferences to see a nice tmuxline...
 
-[Link to github repo](https://github.com/chrissimpkins/Hack)
+### Install fonts
+[Hack](https://github.com/chrissimpkins/Hack)
+[Powerline](https://github.com/powerline/fonts)
+
