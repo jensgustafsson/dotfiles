@@ -6,4 +6,4 @@ venv
 todo.txt/*
 !todo.txt/todo.sh
 !todo.txt/todo.cfg
-
+.zsh/cache
