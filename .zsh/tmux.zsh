@@ -113,3 +113,8 @@ tmsa() {
         fi
     fi
 }
+
+tmux-fuzzy-switch() {
+    res=`tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse`
+    tmux switch-client -t $res
+}
