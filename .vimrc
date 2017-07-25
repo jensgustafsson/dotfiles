@@ -22,7 +22,8 @@ set mouse=a
 set history=200
 
 " Yank and paste to/from "* register.
-set clipboard=unnamed
+" cross platform solution...
+set clipboard^=unnamed,unnamedplus
 
 " Searches are case insenitive.
 set ignorecase
