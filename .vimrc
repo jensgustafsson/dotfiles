@@ -105,9 +105,8 @@ call plug#begin()
 Plug 'rking/ag.vim'
 
 " Status/tabline for vim
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
 
 " Vim plugin for the_silver_searcher
 Plug 'mileszs/ack.vim'
@@ -153,9 +152,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 
-Plug 'itchyny/lightline.vim'
-
-
 call plug#end()
 
 " Configure ale.
@@ -174,6 +170,30 @@ let g:ale_open_list = 0
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" lightline
+let g:lightline = {
+            \ 'colorscheme': 'PaperColor',
+            \ 'component': {
+            \  'readonly': '%{&readonly?"":""}',
+            \ },
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'readonly', 'relativepath', 'modified', 'lint'] ]
+            \ },
+            \ 'inactive': {
+            \    'left': [ [ 'relativepath' ] ]
+            \ },
+            \ 'component_function': {
+            \   'lint': 'Lightline_lint'
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
+
+function! Lightline_lint()
+    return ALEGetStatusLine()
+endfunction
 
 " Configure ag.
 if executable('ag')
@@ -195,42 +215,6 @@ let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R',
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
 let g:SimpylFold_fold_import = 1
-
-" Airline config
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
 
 " Statusline config.
 set statusline+=%#warningmsg#
