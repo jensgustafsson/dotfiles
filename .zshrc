@@ -72,5 +72,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function jstags() {
+ 
+    if [[ -f ~/.ctags ]]; then
+        mv ~/.ctags ~/.ctags.temp_copy
+    fi   
+
+    if [[ -f ~/.ctags_js ]]; then
+        cp ~/.ctags_js ~/.tags
+        ctags .
+    else
+        echo ".ctags_js does not exist"
+    fi
+
+    if [[ -f ~/.ctags.temp_copy ]]; then
+        rm ~/.ctags
+        mv ~/.ctags.temp_copy ~/.ctags
+    fi
+}

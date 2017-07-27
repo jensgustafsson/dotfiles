@@ -93,6 +93,7 @@ set splitright
 
 " Configure ctags.
 set tags=tags;
+nnoremap <leader>jst "!cp ~/.ctags_js ~/.ctags && rm ~/.ctags && ctags ."<cr>
 nnoremap <silent> <F12> :echo "Rebuilding tags..."<cr>:!ctags .<cr>:echo "Rebuilt tags"<cr>
 
 " Disable annoying sound.
@@ -102,6 +103,14 @@ set noerrorbells visualbell t_vb=
 syntax on
 
 call plug#begin()
+
+Plug 'ternjs/tern_for_vim'
+"enable keyboard shortcuts
+let g:tern_map_keys=1
+"show argument hints
+let g:tern_show_argument_hints='on_hold'
+
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'rking/ag.vim'
 
