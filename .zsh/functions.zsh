@@ -111,3 +111,12 @@ function cd() {
     activate_python &> /dev/null
     return 0
 }
+
+
+function av-lime-npm() {
+    echo 'registry=http://npm.lundalogik.com:4873/' > ~/.npmrc
+}
+
+function deactive-lime-npm() {
+    rm ~/.npmrc
+}
