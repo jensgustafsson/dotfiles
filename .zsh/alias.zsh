@@ -24,6 +24,7 @@ alias ipy='$VIRTUAL_ENV/bin/ipython'
 
 alias dc=docker-compose
 alias d=docker
+alias dexec="docker exec -it"
 
 
 if [[ "$(uname)" =~ Linux ]]; then
