@@ -7,6 +7,7 @@
 	[
 		"EditorConfig",
 		"Git blame",
+		"GitGutter",
 		"Package Control",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
