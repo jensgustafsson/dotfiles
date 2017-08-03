@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"EditorConfig",
+		"Git blame",
+		"Package Control",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"Theme - Flatland",
+		"Theme - Solarized Flat"
+	]
+}

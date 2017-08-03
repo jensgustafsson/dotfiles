@@ -1,0 +1,22 @@
+{
+	"color_scheme": "Packages/User/SublimeLinter/Solarized Flat Light (SL).tmTheme",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		"bower",
+		"venv",
+		"Python34",
+		"dist",
+		"tmp"
+	],
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Flatland Dark.sublime-theme"
+}
