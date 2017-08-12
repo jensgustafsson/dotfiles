@@ -38,6 +38,9 @@ set noswapfile"
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 nmap <leader>l :set list!<CR>
 
+" Use space as leader
+let mapleader = "\<Space>"
+
 " When there is a previous search pattern, highlight all its matches.
 set hlsearch
 
