@@ -5,11 +5,13 @@
 	],
 	"installed_packages":
 	[
+		"Babel",
 		"EditorConfig",
 		"Git blame",
 		"GitGutter",
 		"Package Control",
 		"SublimeLinter",
+		"SublimeLinter-contrib-lesshint",
 		"SublimeLinter-jshint",
 		"Theme - Flatland",
 		"Theme - Solarized Flat"
