@@ -30,3 +30,5 @@ alias dexec="docker exec -it"
 if [[ "$(uname)" =~ Linux ]]; then
     alias open=xdg-open
 fi
+
+alias nvmlime='nvm use 6.2.0'

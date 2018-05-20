@@ -92,3 +92,33 @@ function jstags() {
         mv ~/.ctags.temp_copy ~/.ctags
     fi
 }
+
+alias jenkinslocalrestart='docker stop jenkinslocal;docker rm jenkinslocal;docker run --name jenkinslocal -i -d -p 8787:8080 -p 50000:50000 -v /home/jeg/src/localjenkins/jenkins_home:/var/jenkins_home:rw jenkinslocal'
+
+removecontainers() {
+    docker stop $(docker ps -aq)
+    docker rm $(docker ps -aq)
+}
+
+rmdockervolumeweb() {
+    docker volume ls --format "{{.Name}}" | grep ^limewebclient* | xargs docker volume rm --force
+}
+
+rmdockervolumedocker() {
+    docker volume ls --format "{{.Name}}" | grep ^limedocker* | xargs docker volume rm --force
+}
+alias runvpn="sudo openvpn --config ~/.openvpn/client.ovpn.bak"
+
+alias coredev="d run -v ${PWD}:/lime -w /lime -it lime-core sh"
+
+alias temptemp='d ps --format="{{.Image}} | {{.Status}} | Id: {{.ID}}"'
+
+function debug() {
+    local SVC=$1
+    if [[ -z $SVC ]]; then
+        SVC=appserver
+    fi
+    echo "Running debug with SVC=$SVC..."
+    docker-compose stop $SVC
+    docker-compose run --service-ports --rm $SVC /lime/debug-service
+}

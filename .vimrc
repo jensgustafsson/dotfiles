@@ -33,13 +33,13 @@ set nobackup
 set nowritebackup
 set noswapfile"
 
+" Use space as leader
+let mapleader = "\<Space>"
+
 " Configure "list" cmd.
 " Set chars to show in 'list' mode.
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 nmap <leader>l :set list!<CR>
-
-" Use space as leader
-let mapleader = "\<Space>"
 
 " When there is a previous search pattern, highlight all its matches.
 set hlsearch
@@ -107,11 +107,11 @@ syntax on
 
 call plug#begin()
 
-Plug 'ternjs/tern_for_vim'
-"enable keyboard shortcuts
-let g:tern_map_keys=1
-"show argument hints
-let g:tern_show_argument_hints='on_hold'
+" Plug 'ternjs/tern_for_vim'
+" "enable keyboard shortcuts
+" let g:tern_map_keys=1
+" "show argument hints
+" let g:tern_show_argument_hints='on_hold'
 
 Plug 'tpope/vim-vinegar'
 
@@ -165,12 +165,21 @@ Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+map <Leader>tt <Plug>VimwikiToggleListItem
+
+Plug 'junegunn/goyo.vim'
+nnoremap <leader>z :Goyo<cr>
+
 call plug#end()
 
 " Configure ale.
 let &runtimepath.=',~/.vim/bundle/ale'
 filetype plugin on
 silent! helptags ALL
+
+let g:syntastic_javascript_checkers = ['standard']
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -307,3 +316,14 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 if !has('gui_running')
   set t_Co=256
 endif
+
+function ToggleCd()
+    if exists(beginPath) && beginPath != 0
+        let beginPath = 0
+        cd beginPath
+    else
+        let beginPath = getcwd()
+        lcd
+endfunction
+
+autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab

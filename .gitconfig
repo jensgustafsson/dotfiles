@@ -1,6 +1,6 @@
 [user]
     name = Jens Gustafsson
-    email = jens.gustafsson@lundalogik.se
+    email = jens.gustafsson@lime.tech
 
 [credential]
     helper = cache
@@ -23,19 +23,17 @@
     excludesfile = /home/jeg/.gitignore_global
     preloadindex = true
     fscache = true
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    ; pager = diff-so-fancy | less --tabs=4 -RFX
 
 [mergetool "kdiff3"]
-    cmd = \"/cygdrive/c/Program Files/KDiff3/kdiff3\" \"$(cygpath -wla $BASE)\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\" -o \"$(cygpath -wla $MERGED)\"
-    path = \"/cygdrive/c/Program Files/KDiff3/kdiff3.exe\"
+    path = /usr/bin/kdiff3
     keepBackup = false
-    trustExitCode = false
+    trustExitCode = true
 
 [difftool "kdiff3"]
-    cmd = \"/cygdrive/c/Program Files/KDiff3/kdiff3\" \"$(cygpath -wla $LOCAL)\" \"$(cygpath -wla $REMOTE)\"
-
+    path = /usr/bin/kdiff3
     keepBackup = false
-    trustExitCode = false
+    trustExitCode = true
 
 [diff]
     tool = kdiff3
