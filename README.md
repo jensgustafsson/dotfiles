@@ -16,6 +16,8 @@ ln -s ~/src/dotfiles/.dotfile
 * silversearcher-ag
 * powerline
 * vim
+* ctags
+* tmux
 
 ## Fonts
 
