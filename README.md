@@ -13,9 +13,9 @@ ln -s ~/src/dotfiles/.dotfile
 
 * fzf
 * zsh
-* python and python dev-tools
-* docker
-* docker-compose
+* silversearcher-ag
+* powerline
+* vim
 
 ## Fonts
 
