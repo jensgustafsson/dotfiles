@@ -15,9 +15,15 @@ ln -s ~/src/dotfiles/.dotfile
 * zsh
 * silversearcher-ag
 * powerline
-* vim
-* ctags
+* python3 and python3-dev python python-dev
+* docker
+* docker-compose
+* exuberant-ctags
+* vim-gtk
 * tmux
+* build-essential
+* cmake
+* 
 
 ## Fonts
 

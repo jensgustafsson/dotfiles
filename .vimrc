@@ -97,7 +97,12 @@ set splitright
 " Configure ctags.
 set tags=tags;
 nnoremap <leader>jst "!cp ~/.ctags_js ~/.ctags && rm ~/.ctags && ctags ."<cr>
-nnoremap <silent> <F12> :echo "Rebuilding tags..."<cr>:!ctags .<cr>:echo "Rebuilt tags"<cr>
+
+" -i == ignore imports
+" -v == ignore variables
+" Source: https://www.fusionbox.com/blog/detail/navigating-your-django-project-with-vim-and-ctags/590/
+" nnoremap <silent> <F12> :!ctags -R --fields=+l --languages=python --python-kinds=-iv<cr><cr>
+nnoremap <silent> <F12> :AsyncRun ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")<cr><cr>
 
 " Disable annoying sound.
 set noerrorbells visualbell t_vb=
@@ -113,9 +118,12 @@ call plug#begin()
 " "show argument hints
 " let g:tern_show_argument_hints='on_hold'
 
+Plug 'skywind3000/asyncrun.vim'
+
 Plug 'tpope/vim-vinegar'
 
-Plug 'rking/ag.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Status/tabline for vim
 Plug 'edkolev/tmuxline.vim'
@@ -218,10 +226,13 @@ function! Lightline_lint()
 endfunction
 
 " Configure ag.
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-nnoremap <leader>a :Ag ""<left>
+" if executable('ag')
+"   let g:ackprg = 'ag --vimgrep'
+" endif
+nnoremap <leader>a :Ag<cr>
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--ignore ./.dockerignore --ignore ./.git --ignore ./.gitignore --hidden', <bang>0)
+
+
 
 " Configure Ctrl-P.
 let g:ctrlp_use_caching = 0
