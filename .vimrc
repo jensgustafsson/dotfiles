@@ -95,14 +95,11 @@ set splitbelow
 set splitright
 
 " Configure ctags.
-set tags=tags;
-nnoremap <leader>jst "!cp ~/.ctags_js ~/.ctags && rm ~/.ctags && ctags ."<cr>
+set tags=tags
 
-" -i == ignore imports
-" -v == ignore variables
-" Source: https://www.fusionbox.com/blog/detail/navigating-your-django-project-with-vim-and-ctags/590/
-" nnoremap <silent> <F12> :!ctags -R --fields=+l --languages=python --python-kinds=-iv<cr><cr>
-nnoremap <silent> <F12> :AsyncRun ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")<cr><cr>
+" Commands to generate ctags.
+nnoremap <silent> <F12> :AsyncRun ctags -f tags .<cr>
+nnoremap <silent> <F9> :AsyncRun ctags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))")<cr>
 
 " Disable annoying sound.
 set noerrorbells visualbell t_vb=
@@ -112,17 +109,16 @@ syntax on
 
 call plug#begin()
 
-" Plug 'ternjs/tern_for_vim'
-" "enable keyboard shortcuts
-" let g:tern_map_keys=1
-" "show argument hints
-" let g:tern_show_argument_hints='on_hold'
-
 Plug 'skywind3000/asyncrun.vim'
 
+" Better version of/improved netrw
 Plug 'tpope/vim-vinegar'
 
+" A command-line fuzzy finder
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Plugin that makes fzf work in vim.
 Plug 'junegunn/fzf.vim'
 
 " Status/tabline for vim
@@ -144,9 +140,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Asynchronous Lint Engine
 Plug 'w0rp/ale'
 
-" Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Comment stuff out.
 Plug 'tpope/vim-commentary'
 
@@ -166,6 +159,7 @@ Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Saltstack plugin
 Plug 'saltstack/salt-vim', { 'for': 'sls' }
 
 " Color themes
@@ -173,10 +167,12 @@ Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 
+" A Personal Wiki For Vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 map <Leader>tt <Plug>VimwikiToggleListItem
 
+" Distraction-free writing in Vim.
 Plug 'junegunn/goyo.vim'
 nnoremap <leader>z :Goyo<cr>
 
@@ -225,21 +221,16 @@ function! Lightline_lint()
     return ALEGetStatusLine()
 endfunction
 
+" Configure fzf
+nnoremap <leader>p :Files<cr>
+nnoremap <leader>t :Tags<cr>
+nnoremap <leader>b :Buffers<cr>
+
 " Configure ag.
-" if executable('ag')
-"   let g:ackprg = 'ag --vimgrep'
-" endif
 nnoremap <leader>a :Ag<cr>
+
+" Redefine command Ag to use fzf#vim#ag and to ignore specified ignore-files.
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--ignore ./.dockerignore --ignore ./.git --ignore ./.gitignore --hidden', <bang>0)
-
-
-
-" Configure Ctrl-P.
-let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -oc --exclude-standard']
-let g:ctrlp_working_path_mode = ''
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>t :CtrlPTag<cr>
 
 " Configure folding. (Fastfold plugin)
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']
