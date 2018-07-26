@@ -67,9 +67,12 @@ if [[ -r ~/.work_commands.zsh ]]; then
 fi
 
 
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+## Set layout (Default is fullscreen)
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+## Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --hidden --exclude .git --type f'
 
 if [[ -f `which powerline-daemon` ]]; then
     source /usr/share/powerline/bindings/zsh/powerline.zsh

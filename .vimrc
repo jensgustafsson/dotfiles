@@ -230,7 +230,7 @@ nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>a :Ag<cr>
 
 " Redefine command Ag to use fzf#vim#ag and to ignore specified ignore-files.
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--ignore ./.dockerignore --ignore ./.git --ignore ./.gitignore --hidden', <bang>0)
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--ignore ./venv --ignore ./.dockerignore --ignore ./.git --ignore ./.gitignore --hidden', <bang>0)
 
 " Configure folding. (Fastfold plugin)
 let g:fastfold_fold_command_suffixes = ['x','X','a','A','o','O','c','C','r','R','m','M','i','n','N']

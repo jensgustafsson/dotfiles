@@ -12,8 +12,8 @@ alias gjs=grep_js
 
 alias ll='ls -l'
 
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias finddir='find . -type d -name'
+alias findfile='find . -type f -name'
 
 alias gbw='gulp build && gulp watch --no-specs'
 alias gt='gulp test'

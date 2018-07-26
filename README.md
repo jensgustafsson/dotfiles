@@ -25,6 +25,9 @@ ln -s ~/src/dotfiles/.dotfile
 * cmake
 * 
 
+# Install fd (fd is a simple, fast and user-friendly alternative to find.)
+Link: https://github.com/sharkdp/fd
+
 ## Fonts
 
 Remember to change font in terminal preferences to see a nice tmuxline...
