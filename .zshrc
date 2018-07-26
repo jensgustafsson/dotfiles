@@ -54,27 +54,6 @@ if [[ -f `which powerline-daemon` ]]; then
     source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
-if [[ $(uname) =~ linux ]]; then
-  export IS_LINUX=0
-  eval "$(rbenv init -)"
-fi
-
-if [[ $(uname) =~ Darwin ]]; then
-  export IS_MAC=0
-  eval "$(rbenv init -)"
-fi
-
-if [[ $(uname) =~ CYGWIN_NT ]]; then
-  export IS_CYGWIN=0
-fi
-
-# Add all dirs in ./bin to $PATH
-for dir in ~/bin; do
-    if [[ -z ${path[(r)$dir]} ]]; then
-        path=($dir $path)
-    fi
-done
-
 if [[ -r ~/.zsh/functions.zsh ]]; then
     . ~/.zsh/functions.zsh
 fi
