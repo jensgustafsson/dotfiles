@@ -54,20 +54,31 @@ if [[ -f `which powerline-daemon` ]]; then
     source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
+alias python=python3
+alias pip=pip3
+alias rlz="source ~/.zshrc"
+alias grep='grep --color'
+alias ls='ls --color'
+alias ll='ls -l --color'
+alias finddir='find . -type d -name'
+alias findfile='find . -type f -name'
+alias dc=docker-compose
+alias d=docker
+
+if [[ "$(uname)" =~ Linux ]]; then
+    alias open=xdg-open
+fi
+
 if [[ -r ~/.zsh/functions.zsh ]]; then
     . ~/.zsh/functions.zsh
 fi
 
-if [[ -r ~/.zsh/alias.zsh ]]; then
-    . ~/.zsh/alias.zsh
+if [[ -r ~/.zsh/tmux.zsh ]]; then
+    . ~/.zsh/tmux.zsh
 fi
 
 if [[ -r ~/.zsh/nt_specific.zsh ]]; then
     . ~/.zsh/nt_specific.zsh
-fi
-
-if [[ -r ~/.zsh/tmux.zsh ]]; then
-    . ~/.zsh/tmux.zsh
 fi
 
 if [[ -r ~/.zsh/help.zsh ]]; then
