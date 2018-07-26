@@ -87,10 +87,6 @@ if [[ -r ~/.zsh/nt_specific.zsh ]]; then
     . ~/.zsh/nt_specific.zsh
 fi
 
-if [[ -r ~/.zsh/todo.txt.zsh ]]; then
-    . ~/.zsh/todo.txt.zsh
-fi
-
 if [[ -r ~/.zsh/tmux.zsh ]]; then
     . ~/.zsh/tmux.zsh
 fi
