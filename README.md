@@ -16,6 +16,7 @@ ln -s ~/src/dotfiles/.dotfile
 * silversearcher-ag
 * powerline
 * python3 and python3-dev python python-dev
+* python-gpg
 * docker
 * docker-compose
 * exuberant-ctags

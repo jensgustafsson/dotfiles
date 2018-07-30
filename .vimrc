@@ -193,6 +193,8 @@ let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
 let g:ale_sign_column_always = 1
 let g:ale_open_list = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -329,3 +331,8 @@ function ToggleCd()
 endfunction
 
 autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
+
+" Write dts to autosinsert a date.
+inoremap dts <c-r>=strftime('%Y-%m-%d-%A')<CR>
+
+nnoremap <leader>wwt :VimwikiRebuildTags<CR>:VimwikiGenerateTags<CR>
