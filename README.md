@@ -24,7 +24,7 @@ ln -s ~/src/dotfiles/.dotfile
 * tmux
 * build-essential
 * cmake
-* 
+* nvm
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
