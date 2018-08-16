@@ -26,7 +26,6 @@ ln -s ~/src/dotfiles/.dotfile
 * cmake
 * nvm
 * virtualbox
-* virtualbox-ext-pack
 * cifs-utils
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
