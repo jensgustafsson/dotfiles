@@ -25,6 +25,9 @@ ln -s ~/src/dotfiles/.dotfile
 * build-essential
 * cmake
 * nvm
+* virtualbox
+* virtualbox-ext-pack
+* cifs-utils
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
