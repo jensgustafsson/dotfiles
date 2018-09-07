@@ -125,6 +125,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'itchyny/lightline.vim'
 
+" Add linting to lightline...
+Plug 'maximbaz/lightline-ale'
+
 " Vim plugin for the_silver_searcher
 Plug 'mileszs/ack.vim'
 
@@ -195,33 +198,45 @@ let g:ale_sign_column_always = 1
 let g:ale_open_list = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+
+" Set this in your vimrc file to disabling highlighting
+let g:ale_set_highlights = 0
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " lightline
 let g:lightline = {
-            \ 'colorscheme': 'PaperColor',
             \ 'component': {
             \  'readonly': '%{&readonly?"":""}',
-            \ },
-            \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'readonly', 'relativepath', 'modified', 'lint'] ]
-            \ },
-            \ 'inactive': {
-            \    'left': [ [ 'relativepath' ] ]
-            \ },
-            \ 'component_function': {
-            \   'lint': 'Lightline_lint'
             \ },
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' }
             \ }
 
-function! Lightline_lint()
-    return ALEGetStatusLine()
-endfunction
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+
+let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+
+" TODO: Uncomment and download fonts such that this looks cool...
+"let g:lightline#ale#indicator_checking = "\uf110"
+"let g:lightline#ale#indicator_warnings = "\uf071"
+"let g:lightline#ale#indicator_errors = "\uf05e"
+"let g:lightline#ale#indicator_ok = "\uf00c"
 
 " Configure fzf
 nnoremap <leader>p :Files<cr>
