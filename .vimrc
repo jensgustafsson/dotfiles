@@ -207,6 +207,8 @@ let g:ale_set_highlights = 0
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+highlight ALEWarning ctermbg=DarkMagenta
+
 " lightline
 let g:lightline = {
             \ 'component': {
