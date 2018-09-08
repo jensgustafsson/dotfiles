@@ -1,10 +1,8 @@
 [user]
     name = Jens Gustafsson
     email = jens.gustafsson@lime.tech
-
 [credential]
     helper = cache
-
 [alias]
     ls = log --oneline --decorate
     lsg = log --oneline --decorate --graph --all
@@ -14,8 +12,7 @@
     ci = commit -v
     unstage = reset HEAD --
     last = log -1 HEAD
-	dd = git difftool --dir-diff
-
+    dd = git difftool --dir-diff
 [core]
     editor = vim
     filemode = false
@@ -24,29 +21,28 @@
     preloadindex = true
     fscache = true
     ; pager = diff-so-fancy | less --tabs=4 -RFX
-
 [mergetool "kdiff3"]
     path = /usr/bin/kdiff3
     keepBackup = false
     trustExitCode = true
-
 [difftool "kdiff3"]
     path = /usr/bin/kdiff3
     keepBackup = false
     trustExitCode = true
-
 [diff]
     tool = kdiff3
-
+    guitool = kdiff3
 [merge]
     tool = kdiff3
     conflictstyle = diff3
-
 [push]
     default = simple
-
 [color]
     ui = always
     diff = always
 [gc]
     auto = 256
+[mergetool]
+    prompt = false
+[difftool]
+    prompt = false
