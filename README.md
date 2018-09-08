@@ -27,6 +27,7 @@ ln -s ~/src/dotfiles/.dotfile
 * nvm
 * virtualbox
 * cifs-utils
+* kdiff3
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
