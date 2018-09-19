@@ -1,3 +1,7 @@
+function toggle_caps_lock() {
+    xdotool key Caps_Lock
+}
+
 function is_python_active() {
     if [[ $(type -w deactivate) == "deactivate: function" ]]; then
         return 0
