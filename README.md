@@ -28,6 +28,8 @@ ln -s ~/src/dotfiles/.dotfile
 * virtualbox
 * cifs-utils
 * kdiff3
+* vs code
+* Azure Data Studio
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
