@@ -30,6 +30,7 @@ ln -s ~/src/dotfiles/.dotfile
 * kdiff3
 * vs code
 * Azure Data Studio
+* rclone
 
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
