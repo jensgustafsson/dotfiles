@@ -32,6 +32,13 @@ ln -s ~/src/dotfiles/.dotfile
 * Azure Data Studio
 * rclone
 
+## Install Gnome Encfs Manager
+```
+sudo add-apt-repository ppa:gencfsm
+sudo apt-get update
+sudo apt-get install -y gnome-encfs-manager
+```
+
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
 
