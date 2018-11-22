@@ -69,6 +69,8 @@ alias findfile='find . -type f -name'
 alias dc=docker-compose
 alias d=docker
 
+alias thermal="paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'"
+
 if [[ "$(uname)" =~ Linux ]]; then
     alias open=xdg-open
 fi
@@ -95,4 +97,8 @@ fi
 
 if [[ -r ~/.work_commands.zsh ]]; then
     . ~/.work_commands.zsh
+fi
+
+if [[ -r ~/.work_secret_commands.zsh ]]; then
+    . ~/.work_secret_commands.zsh
 fi
