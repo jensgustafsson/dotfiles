@@ -39,6 +39,9 @@ sudo apt-get update
 sudo apt-get install -y gnome-encfs-manager
 ```
 
+## Skilion/onedrive
+https://github.com/skilion/onedrive
+
 # Install fd (fd is a simple, fast and user-friendly alternative to find.)
 Link: https://github.com/sharkdp/fd
 
