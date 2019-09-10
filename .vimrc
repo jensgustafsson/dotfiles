@@ -234,12 +234,6 @@ let g:lightline.component_type = {
 
 let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
-" TODO: Uncomment and download fonts such that this looks cool...
-"let g:lightline#ale#indicator_checking = "\uf110"
-"let g:lightline#ale#indicator_warnings = "\uf071"
-"let g:lightline#ale#indicator_errors = "\uf05e"
-"let g:lightline#ale#indicator_ok = "\uf00c"
-
 " Configure fzf
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :Tags<cr>
@@ -282,9 +276,6 @@ nmap <leader>vimrc :e $MYVIMRC<CR>
 " Reload vimrc.
 nnoremap <leader>vimrl :source $MYVIMRC<CR>
 
-" Toggle between dark and light background.
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
 " Toggle between cursorline and cursorcolumn.
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
@@ -307,47 +298,6 @@ else
     let &t_SI = "\e[5 q"
     let &t_EI = "\e[2 q"
 endif
-
-" Set same colorscheme in vim as terminal
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
-" Set background...
-set background=light
-colorscheme base16-materia
-nnoremap <leader>bg1 :colorscheme base16-solarized-light<CR>
-nnoremap <leader>bg2 :colorscheme base16-chalk<CR>
-nnoremap <leader>bg3 :colorscheme base16-materia<CR>
-
-
-if &term =~ '256color'
-  " Fixing Vim's Background Color Erase for 256-color tmux and GNU screen
-  " https://sunaku.github.io/vim-256color-bce.html
-  " This setting must be applied after `set term=xterm-256color`. (If it is set)
-  set t_ut=
-endif
-
-" Enable true colors in vim.
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-if !has('gui_running')
-  set t_Co=256
-endif
-
-function ToggleCd()
-    if exists(beginPath) && beginPath != 0
-        let beginPath = 0
-        cd beginPath
-    else
-        let beginPath = getcwd()
-        lcd
-endfunction
-
-autocmd FileType javascript set tabstop=2|set shiftwidth=2|set expandtab
 
 " Write dts to autosinsert a date.
 inoremap dts <c-r>=strftime('%Y-%m-%d-%A')<CR>
