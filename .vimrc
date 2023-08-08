@@ -285,7 +285,7 @@ command! Dos2Unix execute ":update | e ++ff=dos | setlocal ff=unix | w"
 " Python specific settings.
 augroup filetype_python
     autocmd!
-    autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType python setlocal colorcolumn=90
     autocmd FileType python setlocal nosmartindent
 augroup END
 
