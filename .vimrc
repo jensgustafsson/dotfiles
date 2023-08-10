@@ -73,6 +73,7 @@ let g:SimpylFold_fold_import = 1
 
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
+let g:ale_virtualtext_cursor = 'current' " current | disabled
 
 call camelcasemotion#CreateMotionMappings('<leader>')
 
