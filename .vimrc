@@ -52,6 +52,8 @@ set backspace=indent,eol,start
 syntax on
 
 highlight clear SignColumn
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
 let mapleader = "\<Space>"
 
@@ -74,6 +76,8 @@ let g:SimpylFold_fold_import = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_virtualtext_cursor = 'current' " current | disabled
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠'
 
 call camelcasemotion#CreateMotionMappings('<leader>')
 
